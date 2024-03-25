@@ -1,0 +1,89 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org/">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dungeons & Dragons Character Creator</title>
+</head>
+<body>
+    <h1>Create your Dungeon & Dragons Character:</h1>
+
+    <form th:action="@{/success}" th:object="${characterForm}" method="post">
+        <!-- Character Name -->
+        <label for="characterName">Character Name:</label>
+        <input type="text" id="characterName" name="characterName"><br><br>
+  
+        <label for="characterRace">Race:</label>
+        <select name="characterRace" id="characterRace">
+            <!-- Race options -->
+            <option value="Dragonborn">Dragonborn</option>
+            <option value="Dwarf">Dwarf</option>
+            <option value="Elf">Elf</option>
+            <option value="Gnome-">Gnome</option>
+            <option value="Half-elf">Half-elf</option>
+            <option value="Halfling">Halfling</option>
+            <option value="Half-orc">HumHalf-orcan</option>
+            <option value="Human">Human</option>
+            <option value="Tiefling">Tiefling</option>
+        </select><br><br>
+
+        <!-- Character Class -->
+        <label for="characterClass">Class:</label>
+        <select name="characterClass" id="characterClass">
+            <!-- Class options -->
+            <option value="Barbarian">Barbarian</option>
+            <option value="Bard">Bard</option>
+            <option value="Cleric">Cleric</option>
+            <option value="Druid">Druid</option>
+            <option value="Fighter">Fighter</option>
+            <option value="Monk">Monk</option>
+            <option value="Paladin">Paladin</option>
+            <option value="Ranger">Ranger</option>
+            <option value="Rogue">Rogue</option>
+            <option value="Sorcerer">Sorcerer</option>
+            <option value="Warlock">Warlock</option>
+            <option value="Wizard">Wizard</option>
+        </select><br><br>
+
+        <!-- Character Stats -->
+        <div style="display: flex; justify-content: space-between;">
+            <!-- Stat Dropdowns -->    
+            <div>
+                <label for="characterCharisma">Charisma:</label>
+                <select name="characterCharisma" id="characterCharisma" class="stat-dropdown">
+                </select>
+            </div>
+            <div>
+                <label for="characterConstitution">Constitution:</label>
+                <select name="characterConstitution" id="characterConstitution" class="stat-dropdown">
+                </select>
+            </div>
+            <div>
+                <label for="characterDexterity">Dexterity:</label>
+                <select name="characterDexterity" id="characterDexterity" class="stat-dropdown">
+                </select>
+            </div>        
+            <div>
+                <label for="characterIntelligence">Intelligence:</label>
+                <select name="characterIntelligence" id="characterIntelligence" class="stat-dropdown">
+                </select>
+            </div>
+            <div>
+                <label for="characterStrength">Strength:</label>
+                <select name="characterStrength" id="characterStrength" class="stat-dropdown">
+                </select>        
+            </div>
+            <div>        
+             <label for="characterWisdom">wisdom:</label>
+                <select name="characterWisdom" id="characterWisdom" class="stat-dropdown">
+                </select>
+            </div>
+        </div>
+        <input type="reset" value="Reset" id="resetButton">
+        <input type="submit" value="Create Character">
+    </form>
+    
+    <script src="/js/statmenu.js"></script>
+</body>
+</html>

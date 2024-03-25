@@ -1,0 +1,41 @@
+<!-- success.html -->
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Characters Created</title>
+    <link rel="stylesheet" href="/css/styles.css"> <!-- Link to your CSS file -->
+</head>
+<body>
+    <h1>Created Characters:</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Race</th>
+                <th>Class</th>
+                <th>Charisma</th>
+                <th>Constitution</th>
+                <th>Dexterity</th>
+                <th>Intelligence</th>
+                <th>Strength</th>
+                <th>Wisdom</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="character : ${characters}">
+                <td th:text="${character.characterName}"></td>
+                <td th:text="${character.characterRace}"></td>
+                <td th:text="${character.characterClass}"></td>
+                <td th:text="${character.characterCharisma}"></td>
+                <td th:text="${character.characterConstitution}"></td>
+                <td th:text="${character.characterDexterity}"></td>
+                <td th:text="${character.characterIntelligence}"></td>
+                <td th:text="${character.characterStrength}"></td> 
+                <td th:text="${character.characterWisdom}"></td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>
