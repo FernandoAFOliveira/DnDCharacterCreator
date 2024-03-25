@@ -24,7 +24,7 @@ For a detailed view of the project's structure, see [PROJECT_STRUCTURE.md](PROJE
 ### Cloning the Repository
 
 ```bash
-git clone [URL of your GitHub repository]
+git clone https://github.com/FernandoAFOliveira/DnDCharacterCreator
 cd DnDCharacterCreator
 ```
 ### Clone the repository using Git:
@@ -73,9 +73,8 @@ Contributions to the DnDCharacterCreator are welcome! Feel free to contribute to
 
 ## License
 
-This project is licensed under [Your License Name].
-
-Replace `[URL of your GitHub repository]` with the actual URL of your GitHub repository and `[Your License Name]` with the name of the license you choose for your project.
+This project is licensed under MIT License.
+https://github.com/FernandoAFOliveira/DnDCharacterCreator/blob/master/LICENSE
 
 ### Additional Information
 For developers: the source code is available in this repository, and you're welcome to contribute or modify as per your requirements.
