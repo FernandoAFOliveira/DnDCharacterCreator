@@ -9,15 +9,16 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.beans.factory.annotation.Autowired;
 
 @Controller
 public class WebController {
 
-    @Autowired
-    private CharacterRepository repository;
-
+    private final CharacterRepository repository;
     private static final Logger logger = LoggerFactory.getLogger(WebController.class);
+
+    public WebController(CharacterRepository repository) {
+        this.repository = repository;
+    }
 
     @GetMapping("/")
     public String indexPage(Model model) {
@@ -29,7 +30,11 @@ public class WebController {
     @PostMapping("/success")
     public String successPage(@ModelAttribute Character character) {
         logger.info("Handling form submission for character: {}", character);
-        logger.info("Character stats: Charisma - {}, Constitution - {} Dexterity - {}, Intelligence - {}, Strength - {}, Wisdom - {}", character.getCharacterCharisma(), character.getCharacterConstitution(), character.getCharacterDexterity(), character.getCharacterIntelligence(), character.getCharacterStrength(), character.getCharacterWisdom());
+        logger.info(
+                "Character stats: Charisma - {}, Constitution - {} Dexterity - {}, Intelligence - {}, Strength - {}, Wisdom - {}",
+                character.getCharacterCharisma(), character.getCharacterConstitution(),
+                character.getCharacterDexterity(), character.getCharacterIntelligence(),
+                character.getCharacterStrength(), character.getCharacterWisdom());
         repository.save(character);
         return "redirect:/success";
     }

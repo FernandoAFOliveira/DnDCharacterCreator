@@ -12,7 +12,6 @@ public class Character {
     @Id
     @GeneratedValue
 
-
     private Long id;
 
     @Column
@@ -41,7 +40,6 @@ public class Character {
 
     @Column
     private Integer characterWisdom;
-
 
     // Getters and setters for each field
     public String getCharacterName() {
@@ -116,10 +114,16 @@ public class Character {
         this.characterWisdom = wisdom;
     }
 
-
-
     @Override
     public String toString() {
-        return "Character [characterName=" + characterName + ", characterRace=" + characterRace + ", characterClass=" + characterClass + ",charisma=" + characterCharisma + ", constitution=" + characterConstitution + ", dexterity=" + characterDexterity + ", intelligence=" + characterIntelligence + ", strength=" + characterStrength + ", wisdom=" + characterWisdom + "]";
+        return "Character [characterName=" + characterName + ", characterRace=" + characterRace + ", characterClass="
+                + characterClass + ",charisma=" + characterCharisma + ", constitution=" + characterConstitution
+                + ", dexterity=" + characterDexterity + ", intelligence=" + characterIntelligence + ", strength="
+                + characterStrength + ", wisdom=" + characterWisdom + "]";
     }
+
+    public Long getId() {
+        return id;
+    }
+
 }
